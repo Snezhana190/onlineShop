@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <!--    bootstrap- сайт для скачивания кода-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+
+<form class="form-group my-4 mx-2" action="/create" method="post"  enctype="multipart/form-data">
+    <p>
+        <label>
+            Name: <input type="text" name="name" placeholder="Press Name">
+        </label>
+    </p>
+    <p>
+        <label >
+            Price: <input type="number" name="price" placeholder="Press price">
+        </label>
+    </p>
+    <p>
+        <label >
+            Color: <input type="text" name="color"placeholder="Input color">
+        </label>
+    </p>
+    <p>
+        <label >
+            Count: <input type="number" name="count" placeholder="Press count">
+        </label>
+    </p>
+    <button class="btn btn-primary mt-2"  type="submit">Create</button>
+</form>
+
+</body>
+
+</html>

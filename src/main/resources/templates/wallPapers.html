@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+<h1 style="text-align: center" class="my-2">Wallpaper list</h1>
+<div class="row">
+    <div class="col-6 col-sm-3">
+
+        <form method="get" action="/wallpaper">
+            <input type="text" name="wallpaperName" class="form-control"
+                   placeholder="Search By wallpaperName">
+            <button type="submit" class="btn btn-primary ml-2 my-2">Search</button>
+        </form>
+    </div>
+</div>
+<table class="table table-striped" style="text-align: center">
+    <tr>
+        <th>NAME</th>
+        <th>COLOR</th>
+        <th>Painting</th>
+        <th>Count</th>
+        <th>Price</th>
+    </tr>
+    <tr th:each="wallPaper : ${wallPapers}">
+        <td th:text="${wallPaper.name}">Onions</td>
+        <td th:text="${wallPaper.color}">Onions</td>
+        <td th:text="${wallPaper.painting}">Onions</td>
+        <td th:text="${wallPaper.price}">Onions</td>
+        <td th:text="${wallPaper.count}">Onions</td>
+    </tr>
+</table>
+
+
+
+<th:block th:if="${#authorization.getAuthentication().getPrincipal().getRole().getAuthority() == 'Admin'}">
+    <form class="form-group my-4 mx-2" action="/create" method="get"  >
+        <button class="btn btn-primary mt-2"  type="submit">Create New WallPaper</button>
+    </form>
+</th:block>
