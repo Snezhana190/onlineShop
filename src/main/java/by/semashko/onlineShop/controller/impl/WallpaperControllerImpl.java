@@ -1,4 +1,4 @@
-package by.semashko.onlineShop.service.impl;
+package by.semashko.onlineShop.controller.impl;
 
 import by.semashko.onlineShop.controller.WallpaperController;
 import by.semashko.onlineShop.controller.constant.WallpaperControllerConstant;
